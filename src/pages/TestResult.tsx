@@ -2,16 +2,18 @@ import { useParams, Link } from "react-router-dom";
 import { allTests } from "@/lib/tests";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Home, RotateCcw, Star, Heart, Briefcase, AlertTriangle, Users, Sparkles } from "lucide-react";
+import { Home, RotateCcw, Star, Heart, Briefcase, AlertTriangle, Users, Sparkles, Share2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
+import ShareCard from "@/components/ShareCard";
 
 const TestResult = () => {
   const { testId, resultKey } = useParams<{ testId: string; resultKey: string }>();
   const test = testId ? allTests[testId] : undefined;
   const result = test && resultKey ? test.resultMapping[resultKey] : undefined;
   const [revealed, setRevealed] = useState(false);
+  const [showShare, setShowShare] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setRevealed(true), 600);
@@ -241,20 +243,30 @@ const TestResult = () => {
               </Button>
             </motion.div>
           </Link>
+          <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="flex-1">
+            <Button onClick={() => setShowShare(true)} className="w-full gradient-bg border-0 relative overflow-hidden">
+              <motion.span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                animate={{ x: ["-100%", "100%"] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "linear" }} />
+              <span className="relative flex items-center gap-1.5">
+                <Share2 className="w-4 h-4" /> 分享结果
+              </span>
+            </Button>
+          </motion.div>
           <Link to="/" className="flex-1">
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-              <Button className="w-full gradient-bg border-0 relative overflow-hidden">
-                <motion.span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                  animate={{ x: ["-100%", "100%"] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "linear" }} />
-                <span className="relative flex items-center gap-1.5">
-                  <Home className="w-4 h-4" /> 返回首页
-                </span>
+              <Button variant="outline" className="w-full">
+                <Home className="w-4 h-4 mr-2" />首页
               </Button>
             </motion.div>
           </Link>
         </motion.div>
       </div>
+
+      {/* Share modal */}
+      {showShare && (
+        <ShareCard test={test} result={result} onClose={() => setShowShare(false)} />
+      )}
     </div>
   );
 };
