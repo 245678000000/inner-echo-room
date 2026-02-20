@@ -6,7 +6,7 @@ export interface TestMeta {
   emoji: string;
   questionCount: number;
   duration: string;
-  category: "personality" | "relationship" | "ability";
+  category: "personality" | "relationship" | "ability" | "mental_health";
   categoryLabel: string;
   gradient: string;
 }
@@ -48,6 +48,42 @@ export const testList: TestMeta[] = [
     categoryLabel: "人格",
     gradient: "bg-gradient-to-br from-amber-400 via-yellow-500 to-lime-400",
   },
+  {
+    id: "holland",
+    title: "霍兰德职业兴趣",
+    subtitle: "找到你的职业方向",
+    description: "RIASEC六维度测评，发现最适合你的职业类型和发展方向。",
+    emoji: "💼",
+    questionCount: 30,
+    duration: "5分钟",
+    category: "ability",
+    categoryLabel: "能力",
+    gradient: "bg-gradient-to-br from-blue-500 via-indigo-500 to-violet-500",
+  },
+  {
+    id: "adhd",
+    title: "成人ADHD筛查",
+    subtitle: "注意力自测",
+    description: "基于ASRS v1.1量表，18道题初步筛查成人注意力缺陷/多动特征。",
+    emoji: "⚡",
+    questionCount: 18,
+    duration: "3分钟",
+    category: "mental_health",
+    categoryLabel: "心理健康",
+    gradient: "bg-gradient-to-br from-red-400 via-orange-400 to-yellow-400",
+  },
+  {
+    id: "eq",
+    title: "情商EQ测试",
+    subtitle: "你的情商有多高？",
+    description: "33道题全面评估你的情商水平，涵盖自我认知、社交认知等5大维度。",
+    emoji: "💡",
+    questionCount: 33,
+    duration: "6分钟",
+    category: "ability",
+    categoryLabel: "能力",
+    gradient: "bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-500",
+  },
 ];
 
 export const categories = [
@@ -55,4 +91,5 @@ export const categories = [
   { key: "personality", label: "🧠 人格" },
   { key: "relationship", label: "💕 关系" },
   { key: "ability", label: "⚡ 能力" },
+  { key: "mental_health", label: "🩺 心理健康" },
 ];
