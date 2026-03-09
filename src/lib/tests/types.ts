@@ -10,6 +10,7 @@ export interface TestQuestion {
   options: TestOption[];
   dimension?: string;
   reverse?: boolean;
+  image?: string;
 }
 
 export interface TestResultDetail {

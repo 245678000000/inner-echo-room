@@ -206,13 +206,29 @@ const TestPlay = () => {
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
             <motion.p
-              className="text-lg font-semibold text-foreground mb-6 leading-relaxed"
+              className="text-lg font-semibold text-foreground mb-4 leading-relaxed"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.1 }}
             >
               {question.text}
             </motion.p>
+
+            {question.image && (
+              <motion.div
+                className="mb-6 rounded-xl overflow-hidden shadow-lg border border-border/50"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.15 }}
+              >
+                <img
+                  src={question.image}
+                  alt={`问题 ${question.id} 配图`}
+                  className="w-full h-auto object-cover"
+                  data-testid={`img-question-${question.id}`}
+                />
+              </motion.div>
+            )}
 
             <div className="space-y-2.5">
               {question.options.map((opt, i) => {
