@@ -15,6 +15,9 @@ export { pleaserTest } from "./pleaser";
 export { mentalBurnTest } from "./mentalburn";
 export { boundaryTest } from "./boundary";
 export { talent2026Test } from "./talent2026";
+export { procrastinationTest } from "./procrastination";
+export { socialAnxietyTest } from "./socialanxiety";
+export { perfectionismTest } from "./perfectionism";
 
 import { TestConfig } from "./types";
 import { mbtiTest } from "./mbti";
@@ -33,6 +36,9 @@ import { pleaserTest } from "./pleaser";
 import { mentalBurnTest } from "./mentalburn";
 import { boundaryTest } from "./boundary";
 import { talent2026Test } from "./talent2026";
+import { procrastinationTest } from "./procrastination";
+import { socialAnxietyTest } from "./socialanxiety";
+import { perfectionismTest } from "./perfectionism";
 
 export const allTests: Record<string, TestConfig> = {
   mbti: mbtiTest,
@@ -51,4 +57,7 @@ export const allTests: Record<string, TestConfig> = {
   mentalburn: mentalBurnTest,
   boundary: boundaryTest,
   talent2026: talent2026Test,
+  procrastination: procrastinationTest,
+  socialanxiety: socialAnxietyTest,
+  perfectionism: perfectionismTest,
 };
