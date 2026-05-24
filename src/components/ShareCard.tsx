@@ -2,7 +2,7 @@ import { useRef, useState, useCallback } from "react";
 import html2canvas from "html2canvas";
 import { TestConfig, TestResultDetail } from "@/lib/tests/types";
 import { Button } from "@/components/ui/button";
-import { Download, Copy, Check, X, MessageCircle, BookOpen, Globe } from "lucide-react";
+import { Download, Copy, Check, X, MessageCircle, BookOpen, Globe, MessageSquare, Smartphone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
