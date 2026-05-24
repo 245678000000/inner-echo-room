@@ -9,6 +9,7 @@ import TestPlay from "./pages/TestPlay";
 import TestResult from "./pages/TestResult";
 import NotFound from "./pages/NotFound";
 import BottomNav from "./components/BottomNav";
+import ThemeToggle from "./components/ThemeToggle";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ThemeToggle />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/tests" element={<Tests />} />
