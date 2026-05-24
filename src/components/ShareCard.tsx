@@ -2,7 +2,7 @@ import { useRef, useState, useCallback } from "react";
 import html2canvas from "html2canvas";
 import { TestConfig, TestResultDetail } from "@/lib/tests/types";
 import { Button } from "@/components/ui/button";
-import { Download, Copy, Check, X, MessageCircle, BookOpen, Globe } from "lucide-react";
+import { Download, Copy, Check, X, MessageCircle, BookOpen, Globe, MessageSquare, Smartphone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
@@ -21,6 +21,12 @@ const socialPlatforms = [
     tip: "保存图片后，打开微信发送给好友或发朋友圈",
   },
   {
+    name: "QQ",
+    icon: MessageSquare,
+    color: "bg-[hsl(210,90%,55%)]",
+    tip: "保存图片 + 复制文案，打开QQ发送给好友或发动态",
+  },
+  {
     name: "小红书",
     icon: BookOpen,
     color: "bg-[hsl(0,75%,55%)]",
@@ -31,6 +37,12 @@ const socialPlatforms = [
     icon: Globe,
     color: "bg-[hsl(35,90%,55%)]",
     tip: "保存图片 + 复制文案，打开微博发布动态",
+  },
+  {
+    name: "抖音",
+    icon: Smartphone,
+    color: "bg-[hsl(0,0%,10%)]",
+    tip: "保存图片 + 复制文案，打开抖音发布图文作品",
   },
 ];
 
