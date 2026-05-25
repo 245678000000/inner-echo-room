@@ -34,7 +34,7 @@ const Tests = () => {
               className={cn(
                 "px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all",
                 activeCategory === cat.key
-                  ? "gradient-bg text-white shadow-md"
+                  ? "gradient-bg text-primary-foreground shadow-md"
                   : "bg-muted text-muted-foreground hover:bg-muted/80"
               )}
             >
